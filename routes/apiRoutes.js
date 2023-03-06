@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 // This single line is equivilent to the two lines above
 const router = express.Router();
-const fs = require('fs');
 
 const path = require('path');
 

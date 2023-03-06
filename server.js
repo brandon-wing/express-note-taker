@@ -16,15 +16,12 @@ app.use(express.urlencoded({extended: true }))
 
 app.use('/api', apiRoutes);
 
-// We start defining our ROUTES
+
 app.get('/notes', (req, res) => {
-  //  console.log("Path: ", __dirname);
-  //console.log("Request Object: ", req)
     res.sendFile(path.join(__dirname, './public/notes.html'));
 })
 
 app.get('/', (req, res) => {
-    console.log("Path: ", __dirname);
     res.sendFile(path.join(__dirname, './public/index.html'));
 })
 
