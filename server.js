@@ -6,6 +6,7 @@ const app = express();
 //access to the routes
 const htmlRoutes = require('./routes/htmlRoutes.js')
 const apiRoutes = require('./routes/apiRoutes.js')
+//env for HEROKU
 const PORT = process.env.PORT || 3001;
 
 // Middlewear Setup
