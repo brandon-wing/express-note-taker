@@ -6,7 +6,7 @@ const app = express();
 //access to the routes
 const htmlRoutes = require('./routes/htmlRoutes.js')
 const apiRoutes = require('./routes/apiRoutes.js')
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middlewear Setup
 // These two lines PARSE the incoming REQUEST 
