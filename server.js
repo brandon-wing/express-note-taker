@@ -7,7 +7,7 @@ const app = express();
 const htmlRoutes = require('./routes/htmlRoutes.js')
 const apiRoutes = require('./routes/apiRoutes.js')
 //env for HEROKU
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3003;
 
 // Middlewear Setup
 // These two lines PARSE the incoming REQUEST 

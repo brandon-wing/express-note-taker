@@ -13,6 +13,7 @@ const fs = require('fs')
 const path = require('path');
 //the variable below grabs the db.json file and its contents
 const data = require('../db/db.json');
+
 // ALL routes in this file are prefixed with '/api'
 router.get('/notes', (req, res) => {
 //responds with the content from the db.json
@@ -42,9 +43,6 @@ router.get('/notes', (req, res) => {
 
 		//We need to use our object to add the data. We will use the .push method
 		data.push(newNote)
-		//we need to incrememnt the ID of each note so that it adds to the JSON instead of replacing the current note
-		let noteId = data
-		req.body.noteId;
 	//couldn't figure out why ../db wasn't working.... writeFile starts from the root folder so only one . is needed!
   //JSON.stringify converts a JavaScript value to a JSON string so that when it is written to db.json, it is formatted correctly.
 	fs.writeFile('./db/db.json', JSON.stringify(data), function (err) {
@@ -58,7 +56,13 @@ router.get('/notes', (req, res) => {
 	});
 
 router.delete('/notes/:id', (req, res) => {
-	console.log("Req Parameters: ", req.params);
+	// console.log("Req Parameters: ", req.params);
+
+	//define the id as a const
+	const id = req.params;
+	console.log(id)
+
+	res.json(data)
 })
 
 // this allows to be accessed outsife of this file
